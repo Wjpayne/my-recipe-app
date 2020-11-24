@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppBar from '@material-ui/core/AppBar';
+import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
@@ -22,6 +22,7 @@ const drawerWidth = 300;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+   
     
   },
   drawer: {
@@ -35,24 +36,29 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      backgroundColor: 'white',
      
     },
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(1),
     [theme.breakpoints.up('sm')]: {
       display: 'none',
+      backgroundColor: 'white',
+      fontSize: '6em',
     },
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: 'white',
   
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    backgroundColor: 'white',
   },
 }));
 
@@ -117,20 +123,21 @@ function ResponsiveDrawer(props) {
   
     return (
       <div className={classes.root}>
-        <CssBaseline />
-        <AppBar position="fixed" className={classes.appBar}>
-          
+       
+        <Box position="fixed" className={classes.appBar}>
+             <CssBaseline />
             <IconButton
-              color="inherit"
+              color = 'inherit'
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
               className={classes.menuButton}
+             
             >
               <MenuIcon />
             </IconButton>
           
-        </AppBar>
+        </Box>
         <nav className={classes.drawer} aria-label="mailbox folders">
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
           <Hidden smUp implementation="css">

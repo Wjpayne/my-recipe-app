@@ -5,8 +5,7 @@ import { makeStyles } from '@material-ui/styles'
 export const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: '#ccffff',
-        height: '100vh',
-        margin: 'auto',
+        height: '150vh',
 
 
     }, 
@@ -18,9 +17,7 @@ export const useStyles = makeStyles((theme) => ({
 
     },
 
-    sideBar: {
-        float: 'left',
-    }
+
 
 
 }));

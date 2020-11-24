@@ -2,7 +2,6 @@ import React from 'react';
 import {useStyles} from '../Components/Css'
 import Grid from "@material-ui/core/Grid";
 
-import Paper from "@material-ui/core/Paper";
 import ResponsiveDrawer from '../Components/SideBar'
 
 
