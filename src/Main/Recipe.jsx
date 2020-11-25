@@ -1,25 +1,26 @@
 import React from 'react';
-import {useStyles} from '../Components/Css'
-import Grid from "@material-ui/core/Grid";
+import {mainStyles} from '../Components/Css'
+import Box from "@material-ui/core/Box";
 
 import ResponsiveDrawer from '../Components/SideBar'
 
 
 export default function MainContainer() {
   
-    const classes = useStyles();
+    const classes = mainStyles();
     return (
 
  
   <div className = {classes.root}>
-      <Grid container spacing = {1} className = {classes.grid}>
+      <Box 
+      className = {classes.mainContent} >
 
-      <Grid item xs={12} >
+      
           
       <ResponsiveDrawer /> 
-      </Grid>
+   
 
-      </Grid>
+      </Box>
     
    
     </div>
