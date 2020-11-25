@@ -75,7 +75,7 @@ const loginFormStyles = makeStyles((theme) => ({
   },
 
   logoContainer: {
-    height: "30vh",
+    height: "25vh",
   },
 
   //MODAL
@@ -91,8 +91,8 @@ const loginFormStyles = makeStyles((theme) => ({
     // border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "90vh",
-    height: "50vh"
+    width: "60vh",
+    height: "30vh",
   },
 }));
 
