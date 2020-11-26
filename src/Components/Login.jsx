@@ -2,13 +2,14 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import './index.css'
+import "./index.css";
+
 
 const loginFormStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: "30ch",
+      width: "40ch",
       height: "20ch",
       justifyContent: "center",
     },
@@ -16,7 +17,7 @@ const loginFormStyles = makeStyles((theme) => ({
 
   text: {
     position: "absolute",
-    top: "40%",
+    top: "43%",
   },
 
   registerButton: {
@@ -26,13 +27,7 @@ const loginFormStyles = makeStyles((theme) => ({
     left: "50%",
     "&:hover": {
       backgroundColor: "white",
-      
     },
-    login: {
-        color: "white",
-        fontSize: "20px"
-    }
-
 
   },
 }));
@@ -40,32 +35,35 @@ const loginFormStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = loginFormStyles();
 
+
+
   return (
+    <div>
+      <div className="login">Login</div>
+      <form className={classes.root} noValidate autoComplete="off">
+        <div className={classes.text}>
+          <TextField
+            required
+            id="standard-required"
+            label="Required"
+            helperText="Username"
+          />
+          <TextField
+            required
+            id="standard-required"
+            label="Required"
+            type="password"
+            autoComplete="current-password"
+            helperText="Password"
+          />
 
-    <form className={classes.root} noValidate autoComplete="off">
-      <div className  = "login">LOGIN</div>
-      <div className={classes.text}>
-       
-        <TextField
-          required
-          id="standard-required"
-          label="Required"
-          helperText="Username"
-        />
-        <TextField
-          required
-          id="standard-required"
-          label="Required"
-          type="password"
-          autoComplete="current-password"
-          helperText="Password"
-        />
+          <Button className={classes.registerButton} >
+            *Click here to register
+          </Button>
 
-        <Button className={classes.registerButton}>
-          *Click here to register
-        </Button>
-       
-      </div>
-    </form>
+
+        </div>
+      </form>
+    </div>
   );
 }

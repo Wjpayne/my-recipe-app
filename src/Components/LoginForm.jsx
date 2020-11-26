@@ -17,7 +17,7 @@ import Login from "./Login";
 import CancelIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 
-const drawerWidth = 300;
+const drawerWidth = 400;
 
 const loginFormStyles = makeStyles((theme) => ({
   root: {
@@ -90,7 +90,7 @@ const loginFormStyles = makeStyles((theme) => ({
     // border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "70vh",
+    width: "65vh",
     height: "30vh",
   },
 
