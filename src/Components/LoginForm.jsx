@@ -13,7 +13,7 @@ import NoteIcon from "@material-ui/icons/Note";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
-import Login from "./Login"
+import Login from "./Login";
 import CancelIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 
@@ -53,15 +53,14 @@ const loginFormStyles = makeStyles((theme) => ({
   },
 
   cancelButton: {
-      float: "right",
-
+    float: "right",
   },
 
   //LOGO
 
   logo: {
     position: "absolute",
-    left: ".4em",
+    left: "1.8em",
     top: "2em",
     fontSize: "40px",
     boxShadow: "none",
@@ -75,7 +74,7 @@ const loginFormStyles = makeStyles((theme) => ({
   },
 
   logoContainer: {
-    height: "25vh",
+    height: "20vh",
   },
 
   //MODAL
@@ -91,8 +90,15 @@ const loginFormStyles = makeStyles((theme) => ({
     // border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "60vh",
+    width: "70vh",
     height: "30vh",
+  },
+
+  container: {
+    position: "absolute",
+    minHeight: "50vh",
+    top: "250px",
+    width: "100%",
   },
 }));
 
@@ -110,63 +116,62 @@ export default function LoginForm() {
 
   return (
     <div>
-      <div className={classes.logoContainer}>
-        <Button
-          
-          disableRipple
-          className={classes.logo}
-         
-        >
-          Randomizer
-        </Button>
-      </div>
-      <Divider />
-      <Button onClick={handleOpen} className={classes.loginButton} variant="contained">
-        Login/Register
+      <Button disableRipple className={classes.logo}>
+        Relish
       </Button>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        <ListItem button>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
 
+      <div className={classes.container}>
         <Divider />
+        <Button
+          onClick={handleOpen}
+          className={classes.loginButton}
+          variant="contained"
+        >
+          Login/Register
+        </Button>
+        <div className={classes.toolbar} />
+        <Divider />
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItem>
 
-        <ListItem button>
-          <ListItemIcon>
-            <SaveIcon />
-          </ListItemIcon>
-          <ListItemText primary="Saved Recipes" />
-        </ListItem>
+          <Divider />
 
-        <Divider />
-        <ListItem button>
-          <ListItemIcon>
-            <NoteIcon />
-          </ListItemIcon>
-          <ListItemText primary="Articles" />
-        </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <SaveIcon />
+            </ListItemIcon>
+            <ListItemText primary="Saved Recipes" />
+          </ListItem>
 
-        <Divider />
-        <ListItem button>
-          <ListItemIcon>
-            <SearchIcon />
-          </ListItemIcon>
-          <ListItemText primary="Randomize" />
-        </ListItem>
-        <Divider />
-      </List>
+          <Divider />
+          <ListItem button>
+            <ListItemIcon>
+              <NoteIcon />
+            </ListItemIcon>
+            <ListItemText primary="Articles" />
+          </ListItem>
+
+          <Divider />
+          <ListItem button>
+            <ListItemIcon>
+              <SearchIcon />
+            </ListItemIcon>
+            <ListItemText primary="Randomize" />
+          </ListItem>
+          <Divider />
+        </List>
+      </div>
 
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -175,16 +180,16 @@ export default function LoginForm() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-          <IconButton
-          color="inherit"
-          aria-label="close modal"
-          edge="start"
-          onClick={handleClose}
-          className={classes.cancelButton}
-        >
-          <CancelIcon  />
-        </IconButton>
-  <Login />
+            <IconButton
+              color="inherit"
+              aria-label="close modal"
+              edge="start"
+              onClick={handleClose}
+              className={classes.cancelButton}
+            >
+              <CancelIcon />
+            </IconButton>
+            <Login />
           </div>
         </Fade>
       </Modal>
