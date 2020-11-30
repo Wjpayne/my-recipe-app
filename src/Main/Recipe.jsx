@@ -1,41 +1,43 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import Box from "@material-ui/core/Box";
-
+import Main from "../Components/Main";
+import Welcome from "../Components/Welcome"
 import ResponsiveDrawer from "../Components/SideBar";
 
 export default function MainContainer() {
-  const mainStyles = makeStyles(() => ({
+  const mainStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: "#ccffff",
       height: "150vh",
+      minWidth: "2000px",
+    
     },
 
-    mainContent: {
-      backgroundColor: "#ccffff",
-      maxWidth: "1000px",
-      position: "absolute",
-    },
+
 
     recipeContent: {
-      width: "800px",
-      height: "200px",
-      backgroundColor: "white",
+      width: "1200px",
+      height: "800px",
+ 
       position: "relative",
-      top: "20%",
-      left: "40%",
-      
-   
-    },
+      top: "10%",
+      left: "30%",
+    }
+
   }));
 
   const classes = mainStyles();
   return (
     <div className={classes.root}>
-      <Box className={classes.mainContent}>
+    
         <ResponsiveDrawer />
+     
+
+      <Box className={classes.recipeContent} >
+        <Main />
+        <Welcome />
       </Box>
-      <Box className={classes.recipeContent}></Box>
     </div>
   );
 }

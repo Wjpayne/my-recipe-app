@@ -87,12 +87,16 @@ const loginFormStyles = makeStyles((theme) => ({
 
   paper: {
     backgroundColor: theme.palette.background.paper,
-    // border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "65vh",
+    width: "55vh",
     height: "30vh",
+    left: "39%",
+    position: "absolute",
+    outline: "none",
+    
   },
+
 
   container: {
     position: "absolute",
@@ -177,6 +181,7 @@ export default function LoginForm() {
         BackdropProps={{
           timeout: 500,
         }}
+        disableAutoFocus={true}
       >
         <Fade in={open}>
           <div className={classes.paper}>

@@ -99,7 +99,7 @@ function ResponsiveDrawer(props) {
           >
 
         {/* LOGIN FORM */}
-            <LoginForm />
+           
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
