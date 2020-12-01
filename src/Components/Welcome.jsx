@@ -74,6 +74,7 @@ export default function Welcome() {
     setOpen(false);
   };
 
+
   return (
     <div>
       <Typography align="center" className={classes.caption}>

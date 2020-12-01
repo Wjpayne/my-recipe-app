@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FormLabel from "@material-ui/core/FormLabel";
-
+import Button from "@material-ui/core/Button"
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
@@ -10,21 +10,31 @@ import Switch from "@material-ui/core/Switch";
 const allergyStyles = makeStyles(() => ({
   form: {
     position: "absolute",
-  left: "10%",
-  marginTop: "140px",
-  
-},
-label: {
+    left: "10%",
+    marginTop: "140px",
+  },
+  label: {
     position: "absolute",
     top: "-40%",
-},
+  },
 
-formHelper: {
+  formHelper: {
     position: "absolute",
     top: "150%",
+  },
 
-
-}
+  save: {
+    position: "absolute",
+    right: "5%",
+    bottom: "-90%",
+    backgroundColor: "grey",
+    color: "white",
+    width: "10em",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "grey",
+    },
+  },
 }));
 
 export default function AllergyForm() {
@@ -133,6 +143,7 @@ export default function AllergyForm() {
           <FormHelperText className={classes.formHelper}>
             Choose one or several allergans.
           </FormHelperText>
+          <Button className={classes.save}>Save</Button>
         </FormGroup>
       </div>
     </div>

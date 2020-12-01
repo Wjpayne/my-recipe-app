@@ -4,12 +4,13 @@ import Box from "@material-ui/core/Box";
 import Main from "../Components/Main";
 import Welcome from "../Components/Welcome"
 import ResponsiveDrawer from "../Components/SideBar";
+import Search from '../Components/Search';
 
 export default function MainContainer() {
   const mainStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: "#ccffff",
-      height: "150vh",
+      height: "6800px",
       minWidth: "2000px",
     
     },
@@ -21,7 +22,7 @@ export default function MainContainer() {
       height: "800px",
  
       position: "relative",
-      top: "10%",
+      top: "2%",
       left: "30%",
     }
 
@@ -37,7 +38,11 @@ export default function MainContainer() {
       <Box className={classes.recipeContent} >
         <Main />
         <Welcome />
+        
       </Box>
+      <Search />
+
+      
     </div>
   );
 }

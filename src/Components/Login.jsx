@@ -54,16 +54,69 @@ const loginFormStyles = makeStyles((theme) => ({
     position: "absolute",
     outline: "none",
   },
+
+  registerButton: {
+    position: "absolute",
+    color: "blue",
+    top: "85%",
+    left: "5%",
+    "&:hover": {
+      backgroundColor: "white",
+    },
+  },
+
+  paperRegister: {
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    width: "55vh",
+    height: "50vh",
+    left: "39%",
+    position: "absolute",
+    outline: "none",
+  },
+
+  loginButton: {
+    position: "absolute",
+    color: "blue",
+    top: "85%",
+    left: "75%",
+    "&:hover": {
+      backgroundColor: "white",
+    },
+    fontSize: "30px"
+  },
+
+  goToLogin: {
+    position: "absolute",
+    color: "blue",
+    top: "71.5%",
+    left: "45%",
+    "&:hover": {
+      backgroundColor: "white",
+    },
+  },
+
+  submitButton: {
+    position: "absolute",
+    color: "blue",
+    top: "85%",
+    left: "37%",
+    "&:hover": {
+      backgroundColor: "white",
+    },
+    fontSize: "30px"
+  },
 }));
 
 export default function Login() {
   const classes = loginFormStyles();
 
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = React.useState(true);
+  
   const handleOpenRegister = () => {
     setOpen(true);
-  };
+  }
 
   const handleCloseRegister = () => {
     setOpen(false);
@@ -90,10 +143,10 @@ export default function Login() {
           />
 
           <Button
-            className={classes.registerButton}
-            onclick={handleOpenRegister}
+            className={classes.loginButton}
+            onClick={handleOpenRegister}
           >
-            *Click here to register
+            submit
           </Button>
         </div>
 
@@ -110,7 +163,7 @@ export default function Login() {
           }}
         >
           <Fade in={open}>
-            <div className={classes.paper}>
+            <div className={classes.paperRegister}>
               <IconButton
                 color="inherit"
                 aria-label="close modal"
@@ -121,6 +174,16 @@ export default function Login() {
                 <CancelIcon />
               </IconButton>
               <Register />
+              <Button className={classes.goToLogin} onClick = {handleCloseRegister}>
+            *Already registered, click here to login.
+          </Button>
+
+          <Button
+            className={classes.submitButton}
+            onClick={handleCloseRegister}
+          >
+            submit
+          </Button>
             </div>
           </Fade>
         </Modal>

@@ -28,24 +28,19 @@ const loginFormStyles = makeStyles((theme) => ({
       backgroundColor: "white",
     },
   },
+
+
+
 }));
 
 export default function Login() {
   const classes = loginFormStyles();
 
-  // const [open, setState] = React.useState(false);
 
-  //   const handleOpenRegister= () => {
-  //     setState(true)
-  //   }
-
-  //   const handlecloseRegister = () => {
-  //   setState(false)
-  // };
 
   return (
     <div className="login-container">
-      <div className="login">Login</div>
+      <div className="login">Register</div>
       <form className={classes.root} noValidate autoComplete="off">
         <div className={classes.text}>
           <TextField
@@ -62,19 +57,19 @@ export default function Login() {
             autoComplete="current-password"
             helperText="Password"
           />
-
+          <div className={classes.email}>
           <TextField
             required
             id="standard-required"
             label="Required"
             type="Email"
             autoComplete="current-password"
-            helperText="Password"
+            helperText="Email"
+            
           />
+          </div>
 
-          <Button className={classes.registerButton}>
-            *Click here to go back to login
-          </Button>
+
         </div>
       </form>
     </div>
