@@ -89,9 +89,9 @@ const loginFormStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "55vh",
-    height: "30vh",
-    left: "39%",
+    width: "40vh",
+    height: "40vh",
+    left: "43%",
     position: "absolute",
     outline: "none",
     
@@ -109,6 +109,7 @@ const loginFormStyles = makeStyles((theme) => ({
 export default function LoginForm() {
   const classes = loginFormStyles();
   const [open, setOpen] = React.useState(false);
+
 
   const handleOpen = () => {
     setOpen(true);

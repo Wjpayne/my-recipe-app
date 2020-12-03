@@ -1,20 +1,17 @@
 import React from "react";
-import Button from "@material-ui/core/Button"
+import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Login from "./Login"
-import Modal from "@material-ui/core/Modal"
+import Login from "./Login/Login";
+import Modal from "@material-ui/core/Modal";
 import CancelIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 import Fade from "@material-ui/core/Fade";
 import Backdrop from "@material-ui/core/Backdrop";
-import Divider from "@material-ui/core/Divider"
-
+import Divider from "@material-ui/core/Divider";
 
 const welcomeStyles = makeStyles((theme) => ({
-   
-  
-    caption: {
+  caption: {
     fontSize: "60px",
     marginTop: "30px",
     fontFamily: ["Courgette"],
@@ -22,21 +19,17 @@ const welcomeStyles = makeStyles((theme) => ({
   },
 
   message: {
-      fontSize: "20px",
+    fontSize: "20px",
   },
 
   button: {
-      color: "blue",
-      fontStyle: "italic"
-
+    color: "blue",
+    fontStyle: "italic",
   },
 
   cancelButton: {
     float: "right",
   },
-  
-
- 
 
   //MODAL
 
@@ -50,16 +43,12 @@ const welcomeStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "55vh",
-    height: "30vh",
-    left: "39%",
+    width: "40vh",
+    height: "40vh",
+    left: "43%",
     position: "absolute",
     outline: "none",
-    
-    
   },
-
-
 }));
 
 export default function Welcome() {
@@ -74,16 +63,24 @@ export default function Welcome() {
     setOpen(false);
   };
 
-
   return (
     <div>
       <Typography align="center" className={classes.caption}>
         Welcome
       </Typography>
       <Typography align="center" className={classes.message}>
-       <br></br> Here at Relish we curate recipes based on your personal style, preferences, and taste.<br></br><br></br>Feel free to create a random recipe or choose from the options above to narrow your search.<br></br><br></br>We highly suggest you <Button className = {classes.button} onClick={handleOpen}>login/register</Button> to get the full experience!
+        <br></br> Here at Relish we curate recipes based on your personal style,
+        preferences, and taste.<br></br>
+        <br></br>Feel free to create a random recipe or choose from the options
+        above to narrow your search.<br></br>
+        <br></br>We highly suggest you{" "}
+        <Button className={classes.button} onClick={handleOpen}>
+          login/register
+        </Button>{" "}
+        to get the full experience!
       </Typography>
-      <br></br><br></br>
+      <br></br>
+      <br></br>
       <Divider />
       <Modal
         aria-labelledby="transition-modal-title"
@@ -113,6 +110,5 @@ export default function Welcome() {
         </Fade>
       </Modal>
     </div>
-    
   );
 }
